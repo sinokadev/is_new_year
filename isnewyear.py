@@ -2,7 +2,7 @@ import re
 import datetime
 import teststs
 
-def is11(value):
+def isnewyear(value):
     if type(value) == str:
         # Korean
         pattern = re.compile(r'^(?:(\d+)년\s*)?(\d+)월\s*(\d+)일$')
@@ -38,7 +38,7 @@ if __name__ == "__main__":
         ["5000년 1월 5일", False],
         ["503224200년 5월 1일", False]
     ]
-    result = teststs.run_test(tests, is11)
+    result = teststs.run_test(tests, isnewyear)
     if not result[0]:
         print("Your code is shit", result[1])
     else: print("OK!")
@@ -52,7 +52,7 @@ if __name__ == "__main__":
         [1767229348, True],
         [1762342348, False],
     ]
-    result = teststs.run_test(tests, is11)
+    result = teststs.run_test(tests, isnewyear)
     if not result[0]:
         print("Your code is shit", result[1])
     else: print("OK!")
