@@ -1,5 +1,6 @@
 import re
 import datetime
+import datestring
 
 def isnewyear(value):
     if type(value) == str:
@@ -25,6 +26,10 @@ def isnewyear(value):
         
         if any(re.match(pattern, text) for pattern in english_patterns):
             return True
+        
+        if datestring.dsparse(value):
+            if datestring.dsparse(value)[1] == datestring.dsparse(value)[2] == 1:
+                return True
     elif type(value) == int:
         dt = datetime.datetime.fromtimestamp(value, datetime.timezone.utc)
         if dt.month == 1 and dt.day == 1:

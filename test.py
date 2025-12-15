@@ -67,3 +67,79 @@ tests = [
 ]
 
 teststs.testtest(tests, isnewyear.isnewyear)
+
+print("----[Date String]----")
+
+tests = [
+    # 8자리 숫자
+    ("20230101", True),
+    ("20231231", False),
+    # 6자리 숫자
+    ("230101", True),
+    ("231231", False),
+    # 4자리 숫자
+    ("0101", True),
+    ("1231", False),
+
+    # YYYY-MM-DD
+    ("2023-01-01", True),
+    ("2023-12-31", False),
+    # YY-MM-DD
+    ("23-01-01", True),
+    ("23-12-31", False),
+    # MM-DD
+    ("01-01", True),
+    ("12-31", False),
+
+    # YYYY.MM.DD
+    ("2023.01.01", True),
+    ("2023.12.31", False),
+    # YY.MM.DD
+    ("23.01.01", True),
+    ("23.12.31", False),
+    # MM.DD
+    ("01.01", True),
+    ("12.31", False),
+
+    # YYYY.MM.DD.
+    ("2023.01.01.", True),
+    ("2023.12.31.", False),
+    # YY.MM.DD.
+    ("23.01.01.", True),
+    ("23.12.31.", False),
+    # MM.DD.
+    ("01.01.", True),
+    ("12.31.", False),
+
+    # YYYY/MM/DD
+    ("2023/01/01", True),
+    ("2023/12/31", False),
+    # YY/MM/DD
+    ("23/01/01", True),
+    ("23/12/31", False),
+    # MM/DD
+    ("01/01", True),
+    ("12/31", False),
+
+    # YYYY MM DD
+    ("2023 01 01", True),
+    ("2023 12 31", False),
+    # YY MM DD
+    ("23 01 01", True),
+    ("23 12 31", False),
+    # MM DD
+    ("01 01", True),
+    ("12 31", False),
+
+    # YYYY_MM_DD
+    ("2023_01_01", True),
+    ("2023_12_31", False),
+    # YY_MM_DD
+    ("23_01_01", True),
+    ("23_12_31", False),
+    # MM_DD
+    ("01_01", True),
+    ("12_31", False),
+]
+
+teststs.testtest(tests, isnewyear.isnewyear)

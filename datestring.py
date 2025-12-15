@@ -1,42 +1,44 @@
 import teststs
 
 def dsparse(text: str):
-    if text.isdecimal():
-        match len(text):
-            case 8:
-                return int(text[0:4]), int(text[4:6]), int(text[6:8])
-            case 6:
-                return int(text[0:2])+2000, int(text[2:4]), int(text[4:6])
-            case 4:
-                return 2000, int(text[0:2]), int(text[2:4])
-    for i in ["-", "/", " ", "_"]: 
-        split_text = text.split(i)
-        if len(split_text) == 2:
-            return 2000, int(split_text[0]), int(split_text[1])
-        if len(split_text[0]) == 2:
-            return int(split_text[0])+2000, int(split_text[1]), int(split_text[2])
-        if len(split_text[0]) == 4:
-            return int(split_text[0]), int(split_text[1]), int(split_text[2])
-    
-    dot_split = text.split(".")
-    if dot_split[-1] == "":
-        match len(dot_split)-1:
-            case 2:
-                return 2000, int(dot_split[0]), int(dot_split[1])
-            case 3:
-                if len(dot_split[0]) == 2:
-                    return int(dot_split[0])+2000, int(dot_split[1]), int(dot_split[2])
-                if len(dot_split[0]) == 4:
-                    return int(dot_split[0]), int(dot_split[1]), int(dot_split[2])
-    else:
-        match len(dot_split):
-            case 2:
-                return 2000, int(dot_split[0]), int(dot_split[1])
-            case 3:
-                if len(dot_split[0]) == 2:
-                    return int(dot_split[0])+2000, int(dot_split[1]), int(dot_split[2])
-                if len(dot_split[0]) == 4:
-                    return int(dot_split[0]), int(dot_split[1]), int(dot_split[2])
+    try:
+        if text.isdecimal():
+            match len(text):
+                case 8:
+                    return int(text[0:4]), int(text[4:6]), int(text[6:8])
+                case 6:
+                    return int(text[0:2])+2000, int(text[2:4]), int(text[4:6])
+                case 4:
+                    return 2000, int(text[0:2]), int(text[2:4])
+        for i in ["-", "/", " ", "_"]: 
+            split_text = text.split(i)
+            if len(split_text) == 2:
+                return 2000, int(split_text[0]), int(split_text[1])
+            if len(split_text[0]) == 2:
+                return int(split_text[0])+2000, int(split_text[1]), int(split_text[2])
+            if len(split_text[0]) == 4:
+                return int(split_text[0]), int(split_text[1]), int(split_text[2])
+        
+        dot_split = text.split(".")
+        if dot_split[-1] == "":
+            match len(dot_split)-1:
+                case 2:
+                    return 2000, int(dot_split[0]), int(dot_split[1])
+                case 3:
+                    if len(dot_split[0]) == 2:
+                        return int(dot_split[0])+2000, int(dot_split[1]), int(dot_split[2])
+                    if len(dot_split[0]) == 4:
+                        return int(dot_split[0]), int(dot_split[1]), int(dot_split[2])
+        else:
+            match len(dot_split):
+                case 2:
+                    return 2000, int(dot_split[0]), int(dot_split[1])
+                case 3:
+                    if len(dot_split[0]) == 2:
+                        return int(dot_split[0])+2000, int(dot_split[1]), int(dot_split[2])
+                    if len(dot_split[0]) == 4:
+                        return int(dot_split[0]), int(dot_split[1]), int(dot_split[2])
+    except: pass
     return None
 
 if __name__ == "__main__":
