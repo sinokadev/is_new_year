@@ -3,7 +3,6 @@ def run_test(tests, func):
         result = func(test[0])
         if result != test[1]:
             return False, test[0], result
-        print("OK!", test[0], result)
     return True, "", ""
 
 def testtest(tests, func):
