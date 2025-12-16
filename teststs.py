@@ -8,7 +8,11 @@ def run_test(tests, func):
 def testtest(tests, func, detail = False):
     result = run_test(tests, func)
     if detail:
-        if not result[0]: print("Your code is shit", "input:", result[1], "expected:", result[2], "actual", result[3])
+        if not result[0]: 
+            print("Your code is shit", "input:", result[1], "expected:", result[2], "actual", result[3])
+            return
     else:
-        if not result[0]: print("Your code is shit", result[1], result[3])
-    else: print("OK!")
+        if not result[0]: 
+            print("Your code is shit", result[1], result[3])
+            return
+    print("OK!")
