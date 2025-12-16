@@ -4,6 +4,7 @@ This project checks whether a date is January 1st for specific formats. We're ad
 
 # Support Format
  - Korean (added on 2025-12-12)
- - Number (added on 2025-12-13) - only Unix timestamps
+ - Number (added on 2025-12-13) - only Unix timestamps and UTC
  - English (added on 2025-12-14)
- - Date String (added on 2025-12-15) - [Date String](./Data-String.md)
+ - Date String (added on 2025-12-16) - [Date String](./Data-String.md)
+ - ISO 8601 (added on 2025-12-17)
