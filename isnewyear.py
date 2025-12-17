@@ -40,6 +40,10 @@ def isnewyear(value):
         d = iso8601.parse_date(value)
         if d is not None and d.month == 1 and d.day == 1: 
             return True
+        
+        # Japanese
+        if value in "1月 1日":
+            return True
     elif type(value) == int:
         dt = datetime.datetime.fromtimestamp(value, datetime.timezone.utc)
         if dt.month == dt.day == 1:
