@@ -11,4 +11,4 @@ This project checks whether a date is January 1st for specific formats. We're ad
  - Japanese (added on 2025-12-18)
 
 # Project End
-2025-12-12 ~ 2025-01-01
+2025-12-12 ~ 2026-01-01
